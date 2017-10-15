@@ -1,4 +1,4 @@
-package ru.k0r0tk0ff.SpringH2RestApp.model;
+package ru.k0r0tk0ff.springH2RestApp.model;
 
 public enum Level {
 

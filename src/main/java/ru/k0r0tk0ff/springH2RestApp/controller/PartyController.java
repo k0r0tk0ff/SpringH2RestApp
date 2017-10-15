@@ -1,4 +1,4 @@
-package ru.k0r0tk0ff.SpringH2RestApp.controller;
+package ru.k0r0tk0ff.springH2RestApp.controller;
 
 import java.util.Collection;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import ru.k0r0tk0ff.SpringH2RestApp.model.Party;
-import ru.k0r0tk0ff.SpringH2RestApp.repository.PartyRepository;
+import ru.k0r0tk0ff.springH2RestApp.model.Party;
+import ru.k0r0tk0ff.springH2RestApp.repository.PartyRepository;
 
 @RestController
 @RequestMapping("/parties")
