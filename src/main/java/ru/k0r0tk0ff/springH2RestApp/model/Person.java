@@ -33,13 +33,6 @@ public class Person {
 	@OneToMany(mappedBy = "person")
 	private Set<Skill> skills = new HashSet<Skill>();
 
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JsonBackReference
-	@JoinTable(name = "people_parties",
-		joinColumns = @JoinColumn(name = "person_id", referencedColumnName = "person_id"),
-		inverseJoinColumns = @JoinColumn(name = "party_id", referencedColumnName = "party_id"))
-	private Set<Party> parties = new HashSet<Party>();
-
 	public long getId() {
 		return id;
 	}
@@ -70,14 +63,6 @@ public class Person {
 
 	public void setSkills(Set<Skill> skills) {
 		this.skills = skills;
-	}
-
-	public Set<Party> getParties() {
-		return parties;
-	}
-
-	public void setParties(Set<Party> parties) {
-		this.parties = parties;
 	}
 
 }

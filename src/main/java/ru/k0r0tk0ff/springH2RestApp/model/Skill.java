@@ -24,9 +24,6 @@ public class Skill {
 
 	private String name;
 
-	@Enumerated(EnumType.STRING)
-	private Level level;
-
 	@ManyToOne
 	@JoinColumn (name="person_id")
 	@JsonBackReference
@@ -46,14 +43,6 @@ public class Skill {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Level getLevel() {
-		return level;
-	}
-
-	public void setLevel(Level level) {
-		this.level = level;
 	}
 
 	public Person getPerson() {
