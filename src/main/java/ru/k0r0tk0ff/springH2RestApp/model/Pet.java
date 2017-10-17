@@ -12,15 +12,15 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Table(name = "skills")
-public class Skill {
+@Table(name = "pets")
+public class Pet {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "skill_id")
+	@Column(name = "pet_id")
 	private long id;
 
-	private String name;
+	private String nick;
 
 	@ManyToOne
 	@JoinColumn (name="client_id")
@@ -35,12 +35,12 @@ public class Skill {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNick() {
+		return nick;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNick(String name) {
+		this.nick = nick;
 	}
 
 	public Client getClient() {

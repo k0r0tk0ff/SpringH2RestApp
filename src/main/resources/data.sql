@@ -3,10 +3,10 @@ INSERT INTO clients (client_id, name) VALUES
 	(2, 'John'),
 	(3, 'Katie');
 	
-INSERT INTO skills (skill_id, client_id, name) VALUES
-	(1, 1, 'Juggling'),
-	(2, 1, 'Dancing'),
-	(3, 2, 'Juggling'),
-	(4, 2, 'Story-telling'),
-	(5, 3, 'Singing');
+INSERT INTO pets (pet_id, client_id, nick) VALUES
+	(1, 1, 'Tom'),
+	(2, 1, 'Jerry'),
+	(3, 2, 'Murka'),
+	(4, 2, 'Polkan'),
+	(5, 3, 'Kesha');
 

@@ -3,9 +3,9 @@ CREATE TABLE clients (
     name VARCHAR(32)
   );
 
-CREATE TABLE skills (
-    skill_id BIGINT PRIMARY KEY auto_increment,
+CREATE TABLE pets (
+    pet_id BIGINT PRIMARY KEY auto_increment,
     client_id BIGINT REFERENCES clients (client_id),
-    name VARCHAR(16)
+    nick VARCHAR(16)
 );
 

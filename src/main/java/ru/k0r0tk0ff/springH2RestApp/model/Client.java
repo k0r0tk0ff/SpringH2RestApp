@@ -27,7 +27,7 @@ public class Client {
 	private String name;
 
 	@OneToMany(mappedBy = "client")
-	private Set<Skill> skills = new HashSet<Skill>();
+	private Set<Pet> pets = new HashSet<Pet>();
 
 	public long getId() {
 		return id;
@@ -45,12 +45,12 @@ public class Client {
 		this.name = name;
 	}
 
-	public Set<Skill> getSkills() {
-		return skills;
+	public Set<Pet> getPets() {
+		return pets;
 	}
 
-	public void setSkills(Set<Skill> skills) {
-		this.skills = skills;
+	public void setPets(Set<Pet> pets) {
+		this.pets = pets;
 	}
 
 }
