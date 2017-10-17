@@ -2,8 +2,6 @@ package ru.k0r0tk0ff.springH2RestApp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,9 +23,9 @@ public class Skill {
 	private String name;
 
 	@ManyToOne
-	@JoinColumn (name="person_id")
+	@JoinColumn (name="client_id")
 	@JsonBackReference
-	private Person person;
+	private Client client;
 
 	public long getId() {
 		return id;
@@ -45,11 +43,11 @@ public class Skill {
 		this.name = name;
 	}
 
-	public Person getPerson() {
-		return person;
+	public Client getClient() {
+		return client;
 	}
 
-	public void setPerson(Person person) {
-		this.person = person;
+	public void setClient(Client client) {
+		this.client = client;
 	}
 }

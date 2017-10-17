@@ -1,6 +1,6 @@
 package ru.k0r0tk0ff.springH2RestApp.services;
 
-import ru.k0r0tk0ff.springH2RestApp.model.Person;
+import ru.k0r0tk0ff.springH2RestApp.model.Client;
 
 import java.util.Collection;
 
@@ -9,9 +9,9 @@ import java.util.Collection;
  */
 public interface ClientAndPetService {
 
-    Collection<Person> findAll();
+    Collection<Client> findAll();
 
-    Person getPersonById();
+    Client getPersonById();
 
     Collection getPetsByClientId(long clientId);
 

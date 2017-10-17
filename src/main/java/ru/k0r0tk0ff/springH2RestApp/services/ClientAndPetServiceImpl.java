@@ -1,6 +1,6 @@
 package ru.k0r0tk0ff.springH2RestApp.services;
 
-import ru.k0r0tk0ff.springH2RestApp.model.Person;
+import ru.k0r0tk0ff.springH2RestApp.model.Client;
 
 import java.util.Collection;
 
@@ -9,12 +9,12 @@ import java.util.Collection;
  */
 public class ClientAndPetServiceImpl implements ClientAndPetService {
     @Override
-    public Collection<Person> findAll() {
+    public Collection<Client> findAll() {
         return null;
     }
 
     @Override
-    public Person getPersonById() {
+    public Client getPersonById() {
         return null;
     }
 

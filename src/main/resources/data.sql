@@ -1,12 +1,12 @@
-INSERT INTO people (person_id, name, age) VALUES 
-	(1, 'Peter', 25),
-	(2, 'John', 30),
-	(3, 'Katie', 18);
+INSERT INTO clients (client_id, name) VALUES
+	(1, 'Peter'),
+	(2, 'John'),
+	(3, 'Katie');
 	
-INSERT INTO skills (skill_id, person_id, name, level) VALUES
-	(1, 1, 'Juggling', 'GOOD'),
-	(2, 1, 'Dancing', 'AWESOME'),
-	(3, 2, 'Juggling', 'AWESOME'),
-	(4, 2, 'Story-telling', 'GODLIKE'),
-	(5, 3, 'Singing', 'GOOD');
+INSERT INTO skills (skill_id, client_id, name) VALUES
+	(1, 1, 'Juggling'),
+	(2, 1, 'Dancing'),
+	(3, 2, 'Juggling'),
+	(4, 2, 'Story-telling'),
+	(5, 3, 'Singing');
 

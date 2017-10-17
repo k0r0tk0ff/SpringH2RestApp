@@ -7,26 +7,26 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import ru.k0r0tk0ff.springH2RestApp.model.Person;
-import ru.k0r0tk0ff.springH2RestApp.repository.PersonRepository;
+import ru.k0r0tk0ff.springH2RestApp.model.Client;
+import ru.k0r0tk0ff.springH2RestApp.repository.ClientRepository;
 
 @RestController
-@RequestMapping("/clients")
+@RequestMapping("/")
 public class PersonController {
 
 	@Autowired
-	private PersonRepository personRepo;
+	private ClientRepository personRepo;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ResponseEntity<Collection<Person>> getPeople() {
+	public ResponseEntity<Collection<Client>> getPeople() {
 		return new ResponseEntity<>(personRepo.findAll(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public ResponseEntity<Person> getClient (@PathVariable long id) {
-		Person person = personRepo.findOne(id);
+	public ResponseEntity<Client> getClient (@PathVariable long id) {
+		Client client = personRepo.findOne(id);
 
-		if (person != null) {
+		if (client != null) {
 			return new ResponseEntity<>(personRepo.findOne(id), HttpStatus.OK);
 		} else {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
@@ -34,7 +34,7 @@ public class PersonController {
 	}
 
 /*	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<?> addPerson(@RequestBody Person person) {
+	public ResponseEntity<?> addPerson(@RequestBody Client person) {
 		return new ResponseEntity<>(personRepo.save(person), HttpStatus.CREATED);
 	}
 

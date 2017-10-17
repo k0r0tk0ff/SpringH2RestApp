@@ -4,12 +4,11 @@ import java.util.Collection;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import ru.k0r0tk0ff.springH2RestApp.model.Person;
+import ru.k0r0tk0ff.springH2RestApp.model.Client;
 
 @Repository
-public interface PersonRepository extends CrudRepository<Person, Long> {
+public interface ClientRepository extends CrudRepository<Client, Long> {
 	
-	Collection<Person> findAll();
+	Collection<Client> findAll();
 
 }
