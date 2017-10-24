@@ -8,14 +8,27 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import ru.k0r0tk0ff.springH2RestApp.model.Client;
+import ru.k0r0tk0ff.springH2RestApp.model.Pet;
 import ru.k0r0tk0ff.springH2RestApp.repository.ClientRepository;
+import ru.k0r0tk0ff.springH2RestApp.repository.PetRepository;
 
 @RestController
 @RequestMapping("/")
 public class PersonController {
 
+    @Autowired
+    private PetRepository petRepo;
+
 	@Autowired
 	private ClientRepository personRepo;
+
+
+
+	@RequestMapping(value = "/getAllPets", method = RequestMethod.GET)
+	public ResponseEntity<Collection<Pet>> getAllPets() {
+		return new ResponseEntity<>(petRepo.findAll(), HttpStatus.OK);
+	}
+
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Collection<Client>> getClients() {
@@ -32,6 +45,9 @@ public class PersonController {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 		}
 	}
+
+
+
 
 /*	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<?> addPerson(@RequestBody Client person) {
