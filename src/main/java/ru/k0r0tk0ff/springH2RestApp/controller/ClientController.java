@@ -11,38 +11,29 @@ import ru.k0r0tk0ff.springH2RestApp.model.Client;
 import ru.k0r0tk0ff.springH2RestApp.model.Pet;
 import ru.k0r0tk0ff.springH2RestApp.repository.ClientRepository;
 import ru.k0r0tk0ff.springH2RestApp.repository.PetRepository;
+import ru.k0r0tk0ff.springH2RestApp.services.ClientAndPetServiceImpl;
 
 @RestController
 @RequestMapping("/")
-public class PersonController {
+public class ClientController {
 
     @Autowired
-    private PetRepository petRepo;
-
-	@Autowired
-	private ClientRepository personRepo;
-
-
-
-	@RequestMapping(value = "/getAllPets", method = RequestMethod.GET)
-	public ResponseEntity<Collection<Pet>> getAllPets() {
-		return new ResponseEntity<>(petRepo.findAll(), HttpStatus.OK);
-	}
+    private ClientAndPetServiceImpl repo;
 
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ResponseEntity<Collection<Client>> getClients() {
-		return new ResponseEntity<>(personRepo.findAll(), HttpStatus.OK);
+		return new ResponseEntity<>(repo.findAll(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Client> getClient (@PathVariable long id) {
-		Client client = personRepo.findOne(id);
+		Client client = repo.findOne(id);
 
 		if (client != null) {
-			return new ResponseEntity<>(personRepo.findOne(id), HttpStatus.OK);
+			return new ResponseEntity<>(repo.findOne(id), HttpStatus.OK);
 		} else {
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	}
 
